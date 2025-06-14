@@ -9,18 +9,26 @@
 		if (masterVolume.value > 0) return 'lucide:volume-1'
 		return 'lucide:volume-x'
 	})
+
+	const isMobile = computed(() =>
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+)
 </script>
 
 <template>
 	<div
 		class="flex flex-col items-center justify-center p-4 bg-[#23272e] rounded-xl w-full max-w-xl"
 	>
+		<div v-if="isMobile" class="mt-2 text-[#FFB300] text-sm font-mono text-center">
+            Volume control is not available on mobile devices.
+        </div>
 		<USlider
 			v-model="masterVolume"
 			:min="0"
 			:max="1"
 			:step="0.01"
-			class="w-full mt-4"
+			:disabled="isMobile"
+			class="w-full mt-4 hover:cursor-pointer"
 			:ui="{
 				base: 'group',
 				track: 'h-5 bg-[#AAB1B8]/20 rounded-full',
