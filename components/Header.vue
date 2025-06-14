@@ -1,5 +1,6 @@
 <template>
-  <header class=" px-10 py-4 flex justify-between items-center">
-    <img src="/logo.svg" alt="Logo" class="h-10 w-auto" />
-  </header>
+	<header class="px-10 py-4 flex justify-between items-center">
+		<img src="/logo.svg" alt="Logo" class="h-10 w-auto" />
+	</header>
 </template>
+
