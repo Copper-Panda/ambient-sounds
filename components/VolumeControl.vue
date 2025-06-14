@@ -10,18 +10,28 @@
 		return 'lucide:volume-x'
 	})
 
-	const isMobile = computed(() =>
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-)
+	const isMobile = computed(() => {
+		// Only check userAgent on client side
+		if (process.client) {
+			return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+				navigator.userAgent,
+			)
+		}
+		// Default value for SSR
+		return false
+	})
 </script>
 
 <template>
 	<div
 		class="flex flex-col items-center justify-center p-4 bg-[#23272e] rounded-xl w-full max-w-xl"
 	>
-		<div v-if="isMobile" class="mt-2 text-[#FFB300] text-sm font-mono text-center">
-            Volume control is not available on mobile devices.
-        </div>
+		<div
+			v-if="isMobile"
+			class="mt-2 text-[#FFB300] text-sm font-mono text-center"
+		>
+			Volume control is not available on mobile devices.
+		</div>
 		<USlider
 			v-model="masterVolume"
 			:min="0"
