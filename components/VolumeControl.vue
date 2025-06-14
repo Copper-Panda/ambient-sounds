@@ -20,9 +20,14 @@
 			:min="0"
 			:max="1"
 			:step="0.01"
-			class="w-full mt-4 cursor-pointer"
-			label="Master Volume"
-			color="primary"
+			class="w-full mt-4"
+			:ui="{
+				base: 'group',
+				track: 'h-5 bg-[#AAB1B8]/20 rounded-full',
+				range: 'bg-[#50A4C2]',
+				thumb:
+					'bg-[#E0E5EB] ring-1 ring-[#E0E5EB]/80 size-5 transition-transform group-hover:scale-110',
+			}"
 		/>
 		<div class="flex items-center justify-center mt-4 space-x-2">
 			<div class="relative w-6 h-6">

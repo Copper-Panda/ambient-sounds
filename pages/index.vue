@@ -22,7 +22,7 @@
 </script>
 
 <template>
-	<div>
+	<div class="flex flex-col justify-between flex-1">
 		<div class="flex flex-row justify-center">
 			<audio
 				ref="rainAudioRef"
@@ -62,7 +62,7 @@
 				class="mx-2"
 			/>
 		</div>
-		<div class="flex justify-center mt-8">
+		<div class="flex justify-center mb-15">
 			<VolumeControl
 				v-model:masterVolume="soundStore.masterVolume"
 				@update:masterVolume="soundStore.setVolume"
