@@ -9,14 +9,14 @@
 	const chweAudioRef = ref(null)
 	const mewAudioRef = ref(null)
 	const thunderAudioRef = ref(null)
-	const testAudioRef = ref(null)
+	const whiteAudioRef = ref(null)
 
 	onMounted(() => {
 		soundStore.setDom('rain', rainAudioRef.value)
 		soundStore.setDom('chwe', chweAudioRef.value)
 		soundStore.setDom('mew', mewAudioRef.value)
 		soundStore.setDom('thunder', thunderAudioRef.value)
-		soundStore.setDom('test', testAudioRef.value)
+		soundStore.setDom('WhiteNoise', whiteAudioRef.value)
 		soundStore.setVolume(soundStore.masterVolume)
 	})
 
@@ -68,7 +68,7 @@
 				loop
 			/>
 			<audio
-				ref="testAudioRef"
+				ref="whiteAudioRef"
 				:src="soundStore.sounds[4].src"
 				preload="auto"
 				loop

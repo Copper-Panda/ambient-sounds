@@ -64,14 +64,18 @@
 </script>
 
 <template>
-	<UPopover v-model:open="open">
+	<UPopover v-model:open="open" :content="{
+      align: 'end',
+      side: 'bottom',
+      sideOffset: 8
+    }">
 		<UButton
 			:icon="isTimerActive ? undefined : 'ph:clock-countdown'"
 			:label="isTimerActive ? formattedTime : 'CountDown'"
 			variant="soft"
 			size="md"
 			:class="[
-				'min-w-18 font-mono bg-[#21252C]/50 hover:bg-[#21252C]/70 hover:cursor-pointer',
+				'min-w-18 font-mono font-bold bg-[#21252C]/50 hover:bg-[#21252C]/70 hover:cursor-pointer',
 				isTimerActive ? 'text-[#50A4C2]' : 'text-[#E0E5EB]',
 			]"
 		/>

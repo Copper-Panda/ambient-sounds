@@ -19,7 +19,7 @@ const togglePlaying = () => {
     ]"
   >
     <Icon
-      name="solar:cloud-rain-broken"
+      :name="sound.iconName"
       size="36"
       :class="[
         'transition-colors duration-300',
