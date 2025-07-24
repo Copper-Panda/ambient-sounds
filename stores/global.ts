@@ -3,6 +3,16 @@ import {defineStore} from 'pinia'
 export const useSoundStore = defineStore('sound', () => {
 	let audioContext = null
 	let masterGainNode = null
+	const sounds = reactive([
+		{name: 'rain', src: '/sounds/rain.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'chwe', src: '/sounds/chew.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'mew', src: '/sounds/mew.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'thunder', src: '/sounds/thunder.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'waves', src: '/sounds/waves.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+	])
+	const masterVolume = ref(0.8)
+	const timerActive = ref(false) // 定时器是否激活
+	const timerSeconds = ref(0) // 剩余秒数
 
 	function initAudioContext() {
 		if (!audioContext) {

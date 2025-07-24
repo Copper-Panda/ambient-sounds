@@ -6,6 +6,21 @@
 
 	const soundStore = useSoundStore()
 
+	const rainAudioRef = ref(null)
+	const chweAudioRef = ref(null)
+	const mewAudioRef = ref(null)
+	const thunderAudioRef = ref(null)
+	const whiteAudioRef = ref(null)
+
+	onMounted(() => {
+		soundStore.setDom('rain', rainAudioRef.value)
+		soundStore.setDom('chwe', chweAudioRef.value)
+		soundStore.setDom('mew', mewAudioRef.value)
+		soundStore.setDom('thunder', thunderAudioRef.value)
+		soundStore.setDom('waves', whiteAudioRef.value)
+		soundStore.setVolume(soundStore.masterVolume)
+	})
+
 	const playingSound = computed(() =>
 		soundStore.sounds.find((s) => s.isPlaying),
 	)
@@ -41,6 +56,37 @@
 	></div>
 	<div class="flex flex-col justify-between flex-1">
 		<div class="flex flex-row justify-center">
+
+			<audio
+				ref="rainAudioRef"
+				:src="soundStore.sounds[0].src"
+				preload="none"
+				loop
+			/>
+			<audio
+				ref="chweAudioRef"
+				:src="soundStore.sounds[1].src"
+				preload="none"
+				loop
+			/>
+			<audio
+				ref="mewAudioRef"
+				:src="soundStore.sounds[2].src"
+				preload="none"
+				loop
+			/>
+			<audio
+				ref="thunderAudioRef"
+				:src="soundStore.sounds[3].src"
+				preload="none"
+				loop
+			/>
+			<audio
+				ref="whiteAudioRef"
+				:src="soundStore.sounds[4].src"
+				preload="none"
+				loop
+			/>
 			<SoundCard
 				v-for="sound in soundStore.sounds"
 				:key="sound.name"
