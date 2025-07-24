@@ -14,10 +14,10 @@
 
 	onMounted(() => {
 		soundStore.setDom('rain', rainAudioRef.value)
-		soundStore.setDom('chwe', chweAudioRef.value)
-		soundStore.setDom('mew', mewAudioRef.value)
-		soundStore.setDom('thunder', thunderAudioRef.value)
-		soundStore.setDom('waves', whiteAudioRef.value)
+		soundStore.setDom('thunder', chweAudioRef.value)
+		soundStore.setDom('stream', mewAudioRef.value)
+		soundStore.setDom('waves', thunderAudioRef.value)
+		soundStore.setDom('night', whiteAudioRef.value)
 		soundStore.setVolume(soundStore.masterVolume)
 	})
 

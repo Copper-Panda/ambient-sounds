@@ -4,10 +4,10 @@ import {ref, reactive} from 'vue'
 export const useSoundStore = defineStore('sound', () => {
 	const sounds = reactive([
 		{name: 'rain', src: '/sounds/rain.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
-		{name: 'chwe', src: '/sounds/chew.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
-		{name: 'mew', src: '/sounds/mew.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
-		{name: 'thunder', src: '/sounds/thunder.wav', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'thunder', src: '/sounds/thunder.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'stream', src: '/sounds/stream.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
 		{name: 'waves', src: '/sounds/waves.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
+		{name: 'night', src: '/sounds/night.mp3', dom: null, isPlaying: false, iconName:'solar:cloud-rain-linear'},
 	])
 	const masterVolume = ref(0.8)
 	const timerActive = ref(false) // 定时器是否激活
