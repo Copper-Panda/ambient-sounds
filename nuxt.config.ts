@@ -1,5 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    head: {
+      title: 'AmbientSounds',
+      meta: [
+        { name: 'description', content: 'Ambient is a modern, open-source, and privacy-focused personal dashboard.' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    }
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
