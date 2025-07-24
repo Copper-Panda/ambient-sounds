@@ -12,7 +12,7 @@ const togglePlaying = () => {
   <div
     @click="togglePlaying"
     :class="[
-      'h-28 w-48 rounded-lg cursor-pointer flex flex-col items-center justify-center transition-colors duration-300',
+      'h-28 w-48 rounded-lg cursor-pointer flex flex-col items-center justify-center transition-colors duration-300 transform hover:scale-105',
       sound.isPlaying
         ? 'bg-[#21252C]/80 hover:bg-[#21252C]/90'
         : 'bg-[#21252C]/50 hover:bg-[#21252C]/70'
