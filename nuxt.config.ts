@@ -8,7 +8,8 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    }
+      ]
+    },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
