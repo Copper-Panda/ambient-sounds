@@ -28,14 +28,37 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/ui', '@pinia/nuxt', '@nuxtjs/sitemap'],
+  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@nuxt/ui', '@pinia/nuxt', '@nuxtjs/sitemap', '@nuxtjs/robots'],
   css: ['~/assets/css/main.css'],
   
+  robots: {
+    UserAgent: '*',
+    Disallow: ['/sounds',
+      'backgrounds'],
+    Allow: '/',
+    Sitemap: 'https://ambientsounds.org/sitemap.xml'
+  },
+
+
   sitemap: {
     siteUrl: 'https://ambientsounds.org',
     gzip: true,
     routes: [
-      '/'
+      {
+        url: '/',
+        changefreq: 'monthly', 
+        priority: 1.0 
+      },
+      {
+        url: '/player',
+        changefreq: 'monthly', 
+        priority: 0.8
+      },
+      {
+        url: '/about',
+        changefreq: 'monthly', 
+        priority: 0.7 
+      }
     ]
   }
 })
