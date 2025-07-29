@@ -65,8 +65,8 @@
 
 <template>
 	<UPopover v-model:open="open" :content="{
-      align: 'end',
-      side: 'bottom',
+      align: 'center',
+      side: 'top',
       sideOffset: 8
     }">
 		<UButton
@@ -75,8 +75,8 @@
 			variant="soft"
 			size="md"
 			:class="[
-				'min-w-18 font-mono font-bold bg-[#21252C]/50 hover:bg-[#21252C]/70 hover:cursor-pointer',
-				isTimerActive ? 'text-[#50A4C2]' : 'text-[#E0E5EB]',
+				'min-w-18 font-mono font-bold bg-[#448CA8] hover:bg-[#498FA6] hover:cursor-pointer ',
+				isTimerActive ? 'text-[#E0E5EB]' : 'text-[#E0E5EB]',
 			]"
 		/>
 		<template #content>
